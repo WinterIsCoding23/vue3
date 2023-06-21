@@ -12,14 +12,17 @@ const app = Vue.createApp({
           color: "green",
           image: "./assets/images/socks_green.jpg",
           quantity: 50,
+          //   onSale: true,
         },
         {
           id: 2235,
           color: "blue",
           image: "./assets/images/socks_blue.jpg",
           quantity: 0,
+          //   onSale: false,
         },
       ],
+      onSale: true,
     };
   },
   methods: {
@@ -39,6 +42,14 @@ const app = Vue.createApp({
     },
     inStock() {
       return this.variants[this.selectedVariant].quantity;
+    },
+    sale() {
+      //   this.onSale ? this.brand + " " + this.product + " is on sale!" : "";
+      // ternary doesnt work..?
+      if (this.onSale) {
+        return this.brand + " " + this.product + " is on sale!";
+      }
+      return "";
     },
   },
 });
