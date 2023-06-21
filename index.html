@@ -16,6 +16,9 @@
         <div class="product-container">
           <div class="product-image">
             <!-- image goes here -->
+            <img v-bind:src="image">
+            <!-- anchor tag goes here -->
+            <a :href="url">Link zu vue.js</a>
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
